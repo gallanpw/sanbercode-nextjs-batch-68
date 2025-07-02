@@ -4,9 +4,9 @@ import React from 'react';
 export default function Navbar() {
   return (
     <nav className="bg-gray-800 p-4 shadow-md">
-      {/* Pastikan div ini membungkus semua konten navigasi */}
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo atau Nama Aplikasi */}
+        {/* Link ini akan bertindak sebagai logo/nama aplikasi yang clickable ke Home */}
         <Link href="/" className="text-white text-2xl font-bold hover:text-gray-300">
           MyNextApp
         </Link>
