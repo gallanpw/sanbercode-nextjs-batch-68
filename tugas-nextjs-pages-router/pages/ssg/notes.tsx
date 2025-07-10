@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps<{ notes: Note[] }> = async (context)
         notesToReturn = apiResponse.data.map((note: any) => ({
             id: note.id,
             title: note.title,
-            content: note.description, // Sesuaikan di sini: 'description' dari API ke 'content' di Note type
+            description: note.description, // Sesuaikan di sini: 'description' dari API ke 'content' di Note type
             created_at: note.created_at,
             updated_at: note.updated_at,
         }));
@@ -68,7 +68,7 @@ export default function SsgNotesPage({
         <meta name="description" content="List of notes fetched using SSG" />
       </Head>
       <main className="flex flex-col items-center justify-center p-8 pb-20">
-        <h1 className="text-4xl font-bold text-green-600 mb-8">My Static Notes</h1>
+        <h1 className="text-4xl font-bold text-green-600 mb-8">My Notes SSG</h1>
         {notes.length === 0 ? (
           <p className="text-lg text-gray-700">No notes found or failed to load.</p>
         ) : (

@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     try {
-      const externalApiResponse = await fetch('https://service.pace11.my.id/api/notes', {
+      const externalApiResponse = await fetch('https://service.pace11.my.id/api/note', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

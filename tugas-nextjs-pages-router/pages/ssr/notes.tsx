@@ -3,11 +3,11 @@ import Head from 'next/head';
 
 // Definisikan tipe data untuk catatan Anda (sesuaikan dengan respon API Notes yang sebenarnya)
 type Note = {
-  id: string;
+  id: number;
   title: string;
-  content: string;
-  createdAt: string;
-  updatedAt: string;
+  description: string;
+  created_at: string;
+  updated_at: string;
 };
 
 // getServerSideProps akan berjalan di sisi server pada setiap request
@@ -58,7 +58,7 @@ export default function NotesPage({
         <meta name="description" content="List of notes fetched from API" />
       </Head>
       <main className="flex flex-col items-center justify-center p-8 pb-20">
-        <h1 className="text-4xl font-bold text-blue-600 mb-8">My Notes</h1>
+        <h1 className="text-4xl font-bold text-blue-600 mb-8">My Notes SSR</h1>
         {notes.length === 0 ? (
           <p className="text-lg text-gray-700">No notes found or failed to load.</p>
         ) : (
@@ -66,8 +66,8 @@ export default function NotesPage({
             {notes.map((note) => (
               <li key={note.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                 <h2 className="text-xl font-semibold mb-2 text-gray-900">{note.title}</h2>
-                <p className="text-gray-700 text-sm mb-4 line-clamp-3">{note.content}</p>
-                <p className="text-xs text-gray-500">Created: {new Date(note.createdAt).toLocaleDateString()}</p>
+                <p className="text-gray-700 text-sm mb-4 line-clamp-3">{note.description}</p>
+                <p className="text-xs text-gray-500">Created: {new Date(note.created_at).toLocaleDateString()}</p>
               </li>
             ))}
           </ul>
