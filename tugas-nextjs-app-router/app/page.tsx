@@ -1,4 +1,6 @@
 import Image from "next/image";
+import ClientCounter from '../components/ClientCounter';
+import ZustandNotesFetcher from '../components/ZustandNotesFetcher';
 
 export default function Home() {
   return (
@@ -50,6 +52,10 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+        
+        <ClientCounter />
+
+        <ZustandNotesFetcher />
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a

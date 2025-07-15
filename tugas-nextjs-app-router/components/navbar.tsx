@@ -28,6 +28,26 @@ export default function Navbar() {
                             Blog
                         </Link>
                     </li>
+                    <li>
+                        <Link href="/notes/ssr" className="text-white hover:text-gray-300 transition-colors duration-200">
+                            View SSR Notes
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/notes/ssg" className="text-white hover:text-gray-300 transition-colors duration-200">
+                            View SSG Notes
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/notes/isr" className="text-white hover:text-gray-300 transition-colors duration-200">
+                            View ISR Notes
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="/add-note-server-action" className="text-white hover:text-gray-300 transition-colors duration-200">
+                            Add Note (Server Action)
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </nav>
