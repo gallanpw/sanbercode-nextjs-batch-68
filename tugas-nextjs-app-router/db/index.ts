@@ -1,18 +1,8 @@
-import { drizzle } from 'drizzle-orm/pg-core';
-import { Pool } from 'pg'; // Menggunakan driver 'pg'
+import { drizzle } from 'drizzle-orm/neon-http'; // Adjusted import based on the correct export
+import { neon } from '@neondatabase/serverless';
 import * as schema from './schema'; // Import skema yang telah kita buat
 
 // Pastikan DATABASE_URL tersedia di environment variables
-const dbUrl = process.env.DATABASE_URL;
+const sql = neon(process.env.DATABASE_URL!);
 
-if (!dbUrl) {
-  throw new Error('DATABASE_URL is not set in environment variables');
-}
-
-// Buat pool koneksi baru untuk PostgreSQL
-const pool = new Pool({
-  connectionString: dbUrl,
-});
-
-// Inisialisasi Drizzle ORM dengan pool dan skema
-export const db = drizzle(pool, { schema });
+export const db = drizzle(sql, { schema });
