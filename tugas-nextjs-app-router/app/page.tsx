@@ -2,11 +2,11 @@ import Image from "next/image";
 import ClientCounter from '../components/ClientCounter';
 import ZustandNotesFetcher from '../components/ZustandNotesFetcher';
 import { db } from '../db';
-import { notes } from '../db/schema';
+// import { notes } from '../db/schema';
 import NotesClientPage from './api/notes/NotesClientPage';
 
 export default async function Home() {
-  const initialNotes = await db.select().from(notes);
+  // const initialNotes = await db.select().from(notes);
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -62,11 +62,11 @@ export default async function Home() {
 
         <ZustandNotesFetcher />
 
-        <NotesClientPage initialNotes={initialNotes.map(note => ({
+        {/* <NotesClientPage initialNotes={initialNotes.map(note => ({
           ...note,
           createdAt: note.createdAt.toISOString(),
           updatedAt: note.updatedAt.toISOString(),
-        }))} />
+        }))} /> */}
 
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
